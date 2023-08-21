@@ -15,6 +15,6 @@ jobs:
       - name: Checkout
         run: |
           echo "Hello, world!"
-          echo "${{ secrets.envPAT }}""
+          echo "${{ secrets.envPAT }}"
           echo "${{ inputs.config-path }}"
       
