@@ -104,8 +104,8 @@ jobs:
       - name: ZeroTier
         uses: zerotier/github-action@v1.0.1
         with:
-            network_id: ${{ secrets.ZEROTIER_NETWORK_ID_PRIVATE }}
-            auth_token: ${{ secrets.ZEROTIER_CENTRAL_TOKEN_PRIVATE }}
+            network_id: ${{ secrets.ZEROTIER_NETWORK_ID }}
+            auth_token: ${{ secrets.ZEROTIER_CENTRAL_TOKEN }}
 
       - name: ping host
         shell: bash
