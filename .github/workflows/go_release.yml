@@ -13,8 +13,6 @@ on:
         required: true
       OSS_KEY_SECRET:
         required: true
-      SSH_ROBOT_URL:
-        required: false
       GoogleID:
         required: false
       GoogleSecret:
@@ -63,6 +61,7 @@ jobs:
           version: latest
           args: release --rm-dist
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GoogleID: ${{ secrets.GoogleID }} 
           GoogleSecret: ${{ secrets.GoogleSecret }}
           DropboxKey: ${{ secrets.DropboxKey }}
