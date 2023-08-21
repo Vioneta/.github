@@ -1,3 +1,4 @@
+name: Publish Local
 on:
   workflow_call:
     inputs:
