@@ -1,0 +1,130 @@
+on:
+  workflow_call:
+    inputs:
+      project-name:
+        required: true
+        type: string
+    secrets:
+      GITHUB_TOKEN:
+        required: true
+      ZEROTIER_NETWORK_ID:
+        required: true
+      ZEROTIER_CENTRAL_TOKEN:
+        required: true
+      SSH_PASSWORD:
+        required: true
+      SSH_ROBOT_URL:
+        required: false
+      GoogleID:
+        required: false
+      GoogleSecret:
+        required: false
+      DropboxKey:
+        required: false
+      DropboxSecret:
+        required: false
+      OneDriveID:
+        required: false
+      OneDriveSecret: 
+        required: false
+      OneDrivePublic:
+        required: false
+      
+
+jobs:
+  goreleaser:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Install dependencies for cross-compiling
+        run: |
+          sudo apt update 
+          sudo apt-get --no-install-recommends --yes install \
+            upx libc6-dev-amd64-cross \
+            gcc-aarch64-linux-gnu libc6-dev-arm64-cross \
+            gcc-arm-linux-gnueabihf libc6-dev-armhf-cross
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: isntall git
+        run: sudo apt install --yes git
+      - name: git global
+        run: sudo git config --global --add safe.directory '*'
+      - name: set version
+        run: sudo git tag v99.99.99-alpha
+        
+      - name: Fetch all tags
+        run: sudo git fetch --force --tags
+        
+      - name: Get version
+        id: get_version
+        # run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+        run: echo "VERSION=$(git describe --abbrev=0 --tags | awk -F- '{print $1}')" >> $GITHUB_ENV
+        
+      - name: show version
+        id: show_version
+        # run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+        run: echo ${{env.VERSION}}
+        
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: 'stable'
+
+      # - name: Replace Action
+      #   uses: datamonsters/replace-action@v2
+      #   with:
+      #     files: './driver/onedrive/util.go '
+      #     replacements: '$OneDrive_Private_Key=${{ secrets.OneDriveSecret }},$OneDrive_Public_Key=${{ secrets.OneDrivePublic }}'
+
+      - name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v4
+        with:
+          # either 'goreleaser' (default) or 'goreleaser-pro'
+          distribution: goreleaser
+          version: latest
+          args: release --rm-dist --snapshot
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GoogleID: ${{ secrets.GoogleID }} 
+          GoogleSecret: ${{ secrets.GoogleSecret }}
+          DropboxKey: ${{ secrets.DropboxKey }}
+          DropboxSecret: ${{ secrets.DropboxSecret }}
+          OneDriveID: ${{ secrets.OneDriveID }}
+          OneDriveSecret: ${{ secrets.OneDriveSecret }}
+          OneDrivePublic: ${{ secrets.OneDrivePublic }}
+          # Your GoReleaser Pro key, if you are using the 'goreleaser-pro' distribution
+          # GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
+
+      - name: remove migration file
+        run: sudo find . -type f  \( -name '*migration*' \) -delete
+        
+      - name: install sshpass
+        run: sudo apt install sshpass --yes
+        
+      - name: ZeroTier
+        uses: zerotier/github-action@v1.0.1
+        with:
+            network_id: ${{ secrets.ZEROTIER_NETWORK_ID_PRIVATE }}
+            auth_token: ${{ secrets.ZEROTIER_CENTRAL_TOKEN_PRIVATE }}
+
+      - name: ping host
+        shell: bash
+        run: |
+          count=10
+          while ! ping -c 1 10.147.18.11 ; do
+            echo "waiting..." ;
+            sleep 1 ;
+            let count=count-1
+          done
+          echo "ping success"
+
+      - name: copy tar to target host
+        shell: bash
+        run: |
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" scp -r -o StrictHostKeyChecking=no -P 22 ./dist/*.gz root@10.147.18.11:/var/www/download
+          echo "ping success"
+      - name: send message
+        run: |
+          curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"${{inputs.project-name}} updated"}}'  ${{ secrets.SSH_ROBOT_URL }}
