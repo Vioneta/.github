@@ -1,0 +1,20 @@
+on:
+  workflow_call:
+    inputs:
+      config-path:
+        required: true
+        type: string
+    secrets:
+      envPAT:
+        required: true
+jobs:
+  reusable_workflow_job:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout
+        run: |
+          echo "Hello, world!"
+          echo "${{ secrets.envPAT }}""
+          echo "${{ inputs.config-path }}"
+      
