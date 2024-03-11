@@ -1,6 +1,6 @@
 # Welcome to Vioneta GitHub Organization!
 
-![Vioneta Logo](https://github.com/Vioneta/.github-private/blob/main/profile/logo.png)
+![Vioneta Logo](https://github.com/Vioneta/.github/blob/main/profile/logo.png)
 
 ## About Us
 
@@ -29,7 +29,6 @@ Vioneta Frontend is our user interface component, offering a user-friendly inter
 ### [Vioneta Android App](https://github.com/Vioneta/android)
 
 The Vioneta Android App repository contains our mobile application, designed to provide farmers with on-the-go access to our agricultural solutions. With features such as real-time monitoring, data visualization, and remote control capabilities, the app enhances flexibility and convenience for farmers managing their operations from mobile devices.
-
 
 ## Get Involved
 
