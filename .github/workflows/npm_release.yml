@@ -16,7 +16,8 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Get version
         id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+        #run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+        run: echo "VERSION=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_OUTPUT
       - name: Set version
         run: |
           sudo apt-get install jq
