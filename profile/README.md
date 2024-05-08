@@ -42,12 +42,9 @@ Whether deployed on-premises or in the cloud, the Vioneta Visual Inference Serve
 
 The Vioneta AI Models repository contains a collection of pre-trained AI models tailored for agricultural use cases. These models cover tasks such as crop monitoring, pest detection, yield prediction, and soil analysis, providing valuable insights to farmers for optimizing their operations.
 
-## Get Involved
+### [VionetaOS Portal UI](https://github.com/Vioneta/VionetaOS-Portal-UI)
 
-We welcome contributions and collaboration from the community! Whether you're a developer, farmer, or agricultural enthusiast, there are many ways to get involved:
+### [VionetaOS APP Store](https://github.com/Vioneta/Vioneta-Appstore)
 
-- Contribute to our repositories.
-- Report bugs or suggest new features.
-- Join discussions on our GitHub issues or forums.
 
-Feel free to explore our repositories and reach out to us with any questions or ideas. Together, we can build a more sustainable and connected future for agriculture!
+
