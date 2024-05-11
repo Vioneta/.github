@@ -10,7 +10,7 @@ Vioneta is a technology-driven agricultural solutions provider dedicated to revo
 
 At Vioneta, we're committed to creating innovative solutions that empower farmers and transform the agricultural landscape. Here's an overview of our main repositories:
 
-### [VionetaOS](https://github.com/Vioneta/VionetaOS)
+### [VionetaOS-Build](https://github.com/Vioneta/VionetaOS-Build)
 
 VionetaOS is our specialized operating system designed to manage agricultural hardware and software components. It provides essential functionalities such as local storage, updates, Docker container management, and network configurations, tailored specifically for farming applications.
 
