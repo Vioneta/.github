@@ -55,6 +55,7 @@ The Vioneta AI Models repository contains a collection of pre-trained AI models 
 ## VionetaOS Components
 
 ### [VionetaOS ](https://github.com/Vioneta/VionetaOS)
+### [VionetaOS Common ](https://github.com/Vioneta/VionetaOS-Common)
 ### [VionetaOS CLI](https://github.com/Vioneta/VionetaOS-CLI)
 ### [VionetaOS MessageBus](https://github.com/Vioneta/VionetaOS-MessageBus)
 ### [VionetaOS UserService](https://github.com/Vioneta/VionetaOS-UserService)
