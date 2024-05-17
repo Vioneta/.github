@@ -35,6 +35,11 @@ Vioneta Frontend is our user interface component, offering a user-friendly inter
 
 The Vioneta Android App repository contains our mobile application, designed to provide farmers with on-the-go access to our agricultural solutions. With features such as real-time monitoring, data visualization, and remote control capabilities, the app enhances flexibility and convenience for farmers managing their operations from mobile devices.
 
+## Vioneta Advanced Data Analytics & Visualization Software
+
+### [Vioneta-AGROINSIGHT](https://github.com/Vioneta/Vioneta-AGROINSIGHT)
+
+
 ## Vioneta Ai NVR System Components
 
 ### [Vioneta-NVR-UI](https://github.com/Vioneta/Vioneta-NVR-UI)
