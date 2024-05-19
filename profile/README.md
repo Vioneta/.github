@@ -42,18 +42,8 @@ The Vioneta Android App repository contains our mobile application, designed to 
 
 ## Vioneta Ai NVR System Components
 
-### [Vioneta-NVR-UI](https://github.com/Vioneta/Vioneta-NVR-UI)
-### [Vioneta-NVR-FFMPEG](https://github.com/Vioneta/Vioneta-NVR-FFMPEG)
-### [Vioneta-NVR-SNAPSHOT](https://github.com/Vioneta/Vioneta-NVR-SNAPSHOT)
-### [Vioneta-NVR-SMCP](https://github.com/Vioneta/Vioneta-NVR-SMCP)
-### [Vioneta-NVR-MNGR](https://github.com/Vioneta/Vioneta-NVR-MNGR)
-### [Vioneta-NVR-CODEPROJECTAI](https://github.com/Vioneta/Vioneta-NVR-CODEPROJECTAI)
-### [Vioneta-NVR-DEEPSTACK](https://github.com/Vioneta/Vioneta-NVR-DEEPSTACK)
-### [Vioneta-NVR-ONVIF](https://github.com/Vioneta/Vioneta-NVR-ONVIF)
-### [Vioneta-NVR-DETECT](https://github.com/Vioneta/Vioneta-NVR-DETECT)
-### [Vioneta-NVR-OPENCV](https://github.com/Vioneta/Vioneta-NVR-OPENCV)
-### [Vioneta-NVR-ALPR](https://github.com/Vioneta/Vioneta-NVR-ALPR)
-### [Vioneta-NVR-FACE](https://github.com/Vioneta/Vioneta-NVR-FACE)
+### [Vioneta-AI-NVR](https://github.com/Vioneta/Vioneta-AI-NVR)
+
 
 ### Vioneta Ai Services Components
 
