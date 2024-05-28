@@ -37,12 +37,12 @@ The Vioneta Android App repository contains our mobile application, designed to 
 
 ## Vioneta Advanced Data Analytics & Visualization Software
 
-### [Vioneta-AGROINSIGHT](https://github.com/Vioneta/Vioneta-AGROINSIGHT)
+### [Vioneta-VINSIGHT](https://github.com/Vioneta/vinsight)
 
 
 ## Vioneta Ai NVR System Components
 
-### [Vioneta-AI-NVR](https://github.com/Vioneta/Vioneta-AI-NVR)
+### [Vioneta-VCAM](https://github.com/Vioneta/Vioneta-VCAM)
 
 
 ### Vioneta Ai Services Components
