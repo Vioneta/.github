@@ -3,7 +3,7 @@ on:
   workflow_call:
     secrets:
       NPM_TOKEN_PRIVATE:
-        required: true
+        required: false
 
 jobs:
   publish-npm:
