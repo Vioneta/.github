@@ -10,9 +10,9 @@ on:
         type: string
     secrets:
       OSS_KEY_ID:
-        required: true
+        required: false
       OSS_KEY_SECRET:
-        required: true
+        required: false
       GoogleID:
         required: false
       GoogleSecret:
