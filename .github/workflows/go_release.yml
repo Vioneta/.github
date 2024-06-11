@@ -23,7 +23,7 @@ on:
         required: false
       OneDriveID:
         required: false
-      OneDriveSecret: 
+      OneDriveSecret:
         required: false
       OneDrivePublic:
         required: false
@@ -55,7 +55,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.21'
+          go-version: "1.21"
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v4
         with:
@@ -65,26 +65,26 @@ jobs:
           args: --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GoogleID: ${{ secrets.GoogleID }} 
-          GoogleSecret: ${{ secrets.GoogleSecret }}
-          DropboxKey: ${{ secrets.DropboxKey }}
-          DropboxSecret: ${{ secrets.DropboxSecret }}
-          OneDriveID: ${{ secrets.OneDriveID }}
-          OneDriveSecret: ${{ secrets.OneDriveSecret }}
-          OneDrivePublic: ${{ secrets.OneDrivePublic }}
+          # GoogleID: ${{ secrets.GoogleID }}
+          # GoogleSecret: ${{ secrets.GoogleSecret }}
+          # DropboxKey: ${{ secrets.DropboxKey }}
+          # DropboxSecret: ${{ secrets.DropboxSecret }}
+          # OneDriveID: ${{ secrets.OneDriveID }}
+          # OneDriveSecret: ${{ secrets.OneDriveSecret }}
+          # OneDrivePublic: ${{ secrets.OneDrivePublic }}
           # Your GoReleaser Pro key, if you are using the 'goreleaser-pro' distribution
           # GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
 
-      - name: Upload to oss
-        id: upload_to_oss
-        uses: tvrcgo/upload-to-oss@master
-        with:
-          key-id: ${{ secrets.OSS_KEY_ID }}
-          key-secret: ${{ secrets.OSS_KEY_SECRET }}
-          region: oss-cn-shanghai
-          bucket: casaos
-          assets: |
-            dist/checksums.txt:/IceWhaleTech/${{inputs.project-name}}/releases/download/${{ steps.get_version.outputs.VERSION }}/checksums.txt
-            dist/linux-arm-7-${{inputs.file-name}}-${{ steps.get_version.outputs.VERSION }}.tar.gz:/IceWhaleTech/${{inputs.project-name}}/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-arm-7-${{inputs.file-name}}-${{ steps.get_version.outputs.VERSION }}.tar.gz
-            dist/linux-arm64-${{inputs.file-name}}-${{ steps.get_version.outputs.VERSION }}.tar.gz:/IceWhaleTech/${{inputs.project-name}}/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-arm64-${{inputs.file-name}}-${{ steps.get_version.outputs.VERSION }}.tar.gz
-            dist/linux-amd64-${{inputs.file-name}}-${{ steps.get_version.outputs.VERSION }}.tar.gz:/IceWhaleTech/${{inputs.project-name}}/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-amd64-${{inputs.file-name}}-${{ steps.get_version.outputs.VERSION }}.tar.gz
+      # - name: Upload to oss
+      #   id: upload_to_oss
+      #   uses: tvrcgo/upload-to-oss@master
+      #   with:
+      #     key-id: ${{ secrets.OSS_KEY_ID }}
+      #     key-secret: ${{ secrets.OSS_KEY_SECRET }}
+      #     region: oss-cn-shanghai
+      #     bucket: casaos
+      #     assets: |
+      #       dist/checksums.txt:/IceWhaleTech/${{inputs.project-name}}/releases/download/${{ steps.get_version.outputs.VERSION }}/checksums.txt
+      #       dist/linux-arm-7-${{inputs.file-name}}-${{ steps.get_version.outputs.VERSION }}.tar.gz:/IceWhaleTech/${{inputs.project-name}}/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-arm-7-${{inputs.file-name}}-${{ steps.get_version.outputs.VERSION }}.tar.gz
+      #       dist/linux-arm64-${{inputs.file-name}}-${{ steps.get_version.outputs.VERSION }}.tar.gz:/IceWhaleTech/${{inputs.project-name}}/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-arm64-${{inputs.file-name}}-${{ steps.get_version.outputs.VERSION }}.tar.gz
+      #       dist/linux-amd64-${{inputs.file-name}}-${{ steps.get_version.outputs.VERSION }}.tar.gz:/IceWhaleTech/${{inputs.project-name}}/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-amd64-${{inputs.file-name}}-${{ steps.get_version.outputs.VERSION }}.tar.gz
