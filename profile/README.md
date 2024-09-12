@@ -45,22 +45,6 @@ The Vioneta Android App repository contains our mobile application, designed to 
 ### [Vioneta-VCAM](https://github.com/Vioneta/Vioneta-VCAM)
 
 
-### Vioneta Ai Services Components
-
-### [Vioneta Visual Inference Server](https://github.com/Vioneta/Visual-Inference-Server)
-
-The Vioneta Visual Inference Server is a powerful platform designed for real-time visual analysis and inference in agricultural applications. Leveraging advanced computer vision techniques, this server enables the detection, classification, and analysis of visual data captured by agricultural sensors, cameras, or drones.
-
-With scalable architecture and efficient resource utilization, the Visual Inference Server provides fast and accurate results, facilitating timely decision-making for farmers. It supports a wide range of use cases, including crop monitoring, pest detection, disease identification, yield estimation, and more.
-
-Whether deployed on-premises or in the cloud, the Vioneta Visual Inference Server offers a flexible and adaptable solution for integrating visual intelligence into agricultural workflows. It serves as a vital component in our mission to revolutionize farming practices through innovative technology.
-
-### [Vioneta Ai model](https://github.com/Vioneta/Ai-model)
-
-The Vioneta AI Models repository contains a collection of pre-trained AI models tailored for agricultural use cases. These models cover tasks such as crop monitoring, pest detection, yield prediction, and soil analysis, providing valuable insights to farmers for optimizing their operations.
-
-
-
 ## VionetaOS Components
 
 ### [VionetaOS ](https://github.com/Vioneta/VionetaOS)
